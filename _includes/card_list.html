@@ -10,13 +10,22 @@
             <mark>{{ item.highlight }}</mark>
           {% endif %}
 
+          {% if item.ok %}
+            {% if item.ok  == 'pass' %}
+	      <mark style="background: green!important">{{ item.ok }}</mark>
+            {% else %}
+	      <mark style="background: red!important">{{ item.ok }}</mark>
+            {% endif %}
+          {% else %}
+	    N/A
+          {% endif %}
+
         </span>
 
         <hr />
 
         {% if item.desc != false %}
         <p class="body">
-          {{ item.desc }}
         </p>
         {% endif %}
       </a>

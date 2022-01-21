@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="html" data-theme="dark">
+
+<script>
+function readTextFile(file, out)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+		var node = document.getElementById(out);
+		node.innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+}
+function readTextFileAndAlert(file, out)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+		var node = document.getElementById(out);
+		node.innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+}
+</script>
+
+<p>This is an example page!</p>
+<p>Actually, it has the same layout of a post…</p>
+
+<div id='output'>
+<script> readTextFile("text/plain", 'output'); </script>
+</div>
+<div id='warn'>
+<script> readTextFileAndAlert("text/plain2", 'warn'); </script>
+</div>
+
+</html>
