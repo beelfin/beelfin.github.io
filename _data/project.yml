@@ -1,9 +1,5 @@
 project_entries:
   - title: Project 1
-    url: overview-post.html
-    desc: This is an example project, configured in _data/home.yml
     ok: pass
   - title: Project 2
-    url: overview-post.html
-    desc: This is an example project, configured in _data/home.yml
     ok: pass
